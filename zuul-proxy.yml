@@ -8,6 +8,12 @@ spring:
         locator:
           enabled: true
 
+zuul:
+  routes:
+    test:
+      path: /test/**
+      serviceId: test
+
 eureka:
   #instance:
   #  hostname: eureka
@@ -19,3 +25,7 @@ eureka:
     serviceUrl:
       #defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
       defaultZone: ${EUREKA_URI}
+      
+logging:
+  pattern: 
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
