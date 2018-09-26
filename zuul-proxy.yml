@@ -18,4 +18,4 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       #defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
-      defaultZone: ${EUREKA-URI}
+      defaultZone: ${EUREKA_URI}
