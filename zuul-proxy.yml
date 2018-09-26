@@ -1,5 +1,5 @@
 server:
-  port: 8060
+ port: 8060
 
 #spring:
 #  cloud:
@@ -25,7 +25,7 @@ eureka:
     serviceUrl:
       #defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
       defaultZone: ${EUREKA_URI}
-      
+
 logging:
   pattern: 
     console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
