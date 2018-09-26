@@ -1,12 +1,21 @@
 server:
-  port: 8061
+  port: 8060
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
 
 eureka:
-  instance:
-    hostname: localhost
-    leaseRenewalIntervalInSeconds: 10
+  #instance:
+  #  hostname: eureka
+  #  port: 8061
+    #leaseRenewalIntervalInSeconds: 10
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      #defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+      defaultZone: ${EUREKA-URI}
