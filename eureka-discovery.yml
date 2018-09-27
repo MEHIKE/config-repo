@@ -2,6 +2,7 @@ server:
   port: 8061
 
 eureka:
+  numberRegistrySyncRetries: 1
   instance:
     hostname: localhost
     leaseRenewalIntervalInSeconds: 10
@@ -13,4 +14,5 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
   server:
     evictionIntervalTimerInMs: 1000
-    response-cache-update-interval-ms: 1000  
+    response-cache-update-interval-ms: 1000
+    enable-self-preservation: false  
