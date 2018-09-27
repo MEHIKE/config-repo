@@ -15,4 +15,5 @@ eureka:
   server:
     evictionIntervalTimerInMs: 10000
     response-cache-update-interval-ms: 1000
-    enable-self-preservation: false  
+    enable-self-preservation: false
+    waitTimeInMsWhenSyncEmpty: 0
