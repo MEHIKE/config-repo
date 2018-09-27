@@ -2,7 +2,7 @@ server:
   port: 8061
 
 eureka:
-  numberRegistrySyncRetries: 1
+  numberRegistrySyncRetries: 10
   instance:
     hostname: localhost
     leaseRenewalIntervalInSeconds: 10
