@@ -1,0 +1,23 @@
+server:
+  port: 8060
+
+zuul:
+  routes:
+    test:
+      path: /test/**
+      serviceId: test
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URI}
+
+security:
+  basic:
+    enabled: false
+
+logging:
+  pattern: 
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
