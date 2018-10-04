@@ -13,42 +13,27 @@ eureka:
   server: 
     wait-time-in-ms-when-sync-empty: 3000
       
+  datasource:
+    url: jdbc:postgresql://postgres:${POSTGRES_SERVICE_PORT}/${POSTGRES_DB}?currentSchema=public
+    #jdbc:mysql://localhost:3306/oauth2?useSSL=false
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+    tomcat:
+      test-while-idle: true
+      validation-query: SELECT 1
+    initialization-mode: never
+    #platform: mysql
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+    hibernate:
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+      ddl-auto: validate
       
-security:
-  basic:
-    enabled: false
-  oauth2:
-    client:
-      client-id: acme
-      client-secret: acmesecret
-      scope: read,write
-      auto-approve-scopes: '.*'
-      access-token-uri: http://localhost:8085/oauth/token
-      user-authorization-uri: http://localhost:8085/oauth/authorize
-    resource:
-      user-info-uri: http://localhost:8085/me 
-      
-facebook:
-  client:
-    clientId: ${FB_CLIENTID}
-    clientSecret: ${FB_CLIENTSECRET}
-    accessTokenUri: https://graph.facebook.com/oauth/access_token
-    userAuthorizationUri: https://www.facebook.com/dialog/oauth
-    tokenName: oauth_token
-    authenticationScheme: query
-    clientAuthenticationScheme: form
-  resource:
-    userInfoUri: https://graph.facebook.com/me
-    
-github:
-  client:
-    clientId: ${GITHUB_CLIENTID}
-    clientSecret: ${GITHUB_CLIENTSEVRET}
-    accessTokenUri: https://github.com/login/oauth/access_token
-    userAuthorizationUri: https://github.com/login/oauth/authorize
-    clientAuthenticationScheme: form
-  resource:
-    userInfoUri: https://api.github.com/user
+check-user-scopes: true      
 
 logging:
   level:
