@@ -10,8 +10,8 @@ zuul:
       serviceId: test
     auth-service:  
       sensitiveHeaders:
-      path: /uaa/**
-      stripPrefix: false
+      #path: /uaa/**
+      #stripPrefix: false
       serviceId: auth-service 
       
 eureka:
