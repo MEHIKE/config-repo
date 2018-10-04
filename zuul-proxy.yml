@@ -8,7 +8,7 @@ zuul:
       sensitiveHeaders: 
       path: /test/**
       serviceId: test
-    auth-service:  
+    auth:  
       sensitiveHeaders:
       path: /uaa/**
       stripPrefix: false
