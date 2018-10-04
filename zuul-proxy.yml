@@ -11,7 +11,7 @@ zuul:
     auth-service:  
       sensitiveHeaders:
       path: /uaa/**
-      stripPrefix: false
+      #stripPrefix: false
       serviceId: auth-service 
       
 eureka:
