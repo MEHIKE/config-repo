@@ -17,3 +17,9 @@ eureka:
     response-cache-update-interval-ms: 1000
     enable-self-preservation: false
     waitTimeInMsWhenSyncEmpty: 0
+    
+ logging:
+  level:
+    org.springframework.security: DEBUG 
+  pattern: 
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
