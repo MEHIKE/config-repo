@@ -48,8 +48,9 @@ github:
 
 logging:
   level:
-    ROOT: ERROR
-    org.springframework.web: ERROR
+    ROOT: DEBUG
+    eu.babywatcher: DEBUG
+    org.springframework.web: DEBUG
     org.springframework.security: DEBUG 
   pattern: 
     #console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
