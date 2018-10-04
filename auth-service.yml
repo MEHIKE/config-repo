@@ -7,9 +7,12 @@ server:
 eureka:
   client:
     registerWithEureka: true
-    fetchRegistry: true
+    fetchRegistry: false
     serviceUrl:
       defaultZone: ${EUREKA_URI}
+  server: 
+    wait-time-in-ms-when-sync-empty: 3000
+      
       
 security:
   basic:
