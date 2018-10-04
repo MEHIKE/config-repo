@@ -14,8 +14,7 @@ eureka:
     wait-time-in-ms-when-sync-empty: 3000
       
   datasource:
-    url: jdbc:postgresql://postgres:${POSTGRES_SERVICE_PORT}/${POSTGRES_DB}?currentSchema=public
-    #jdbc:mysql://localhost:3306/oauth2?useSSL=false
+    url: jdbc:postgresql://postgres:${POSTGRES_PORT}/${POSTGRES_DB}?currentSchema=public
     username: ${POSTGRES_USER}
     password: ${POSTGRES_PASSWORD}
     driver-class-name: org.postgresql.Driver
