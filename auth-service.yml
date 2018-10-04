@@ -11,8 +11,6 @@ eureka:
 security:
   basic:
     enabled: false
-
-security:
   oauth2:
     client:
       client-id: acme
