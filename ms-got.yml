@@ -25,7 +25,7 @@ spring:
   application:
     name: ms-got
   datasource:
-    url: jdbc:postgresql://postgres:${POSTGRES_PORT}/${OAUTH_DB}?currentSchema=public
+    url: jdbc:postgresql://postgres:${POSTGRES_PORT}/${MSGOT_DB}?currentSchema=public
     username: ${POSTGRES_USER}
     password: ${POSTGRES_PASSWORD}
     driver-class-name: org.postgresql.Driver
