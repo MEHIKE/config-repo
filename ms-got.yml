@@ -54,6 +54,7 @@ logging:
     eu.babywatcher: DEBUG
     org.springframework.web: DEBUG
     org.springframework.security: DEBUG 
+    eu.babywarcher: DEBUG
   file: /tmp/logs/ms-got.log
   pattern: 
     #console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
