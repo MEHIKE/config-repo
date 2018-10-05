@@ -42,8 +42,8 @@ endpoints:
 logging:
   level:
     org.springframework.security: DEBUG
-    ROOT: ERROR 
-    org.springframework.web: ERROR
+    ROOT: DEBUG 
+    org.springframework.web: DEBUG
     eu.babywarcher: DEBUG 
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} - %msg%n"
