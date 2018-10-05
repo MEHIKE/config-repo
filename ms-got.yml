@@ -3,7 +3,8 @@ server:
   #use-forward-headers: false
   servlet:
     context-path: /ms-got
-  compression: false
+  compression: 
+    enabled: false
 
 auth-server:
   url: http://zuul:8060
