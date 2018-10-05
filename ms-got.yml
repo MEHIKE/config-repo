@@ -12,7 +12,7 @@ auth-server:
 eureka:
   client:
     registerWithEureka: true
-    fetchRegistry: false
+    fetchRegistry: true
     serviceUrl:
       defaultZone: ${EUREKA_URI}
   server: 
