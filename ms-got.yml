@@ -50,9 +50,9 @@ spring:
 
 logging:
   level:
-    ROOT: DEBUG
+    ROOT: ERROR
     eu.babywatcher: DEBUG
-    org.springframework.web: DEBUG
+    org.springframework.web: ERROR
     org.springframework.security: DEBUG 
   file: /tmp/logs/ms-got.log
   pattern: 
