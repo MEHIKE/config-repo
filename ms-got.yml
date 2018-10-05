@@ -52,7 +52,7 @@ logging:
   level:
     ROOT: ERROR
     eu.babywatcher: DEBUG
-    org.springframework.web: ERROR
+    org.springframework.web: DEBUG
     org.springframework.security: DEBUG 
   file: /tmp/logs/ms-got.log
   pattern: 
