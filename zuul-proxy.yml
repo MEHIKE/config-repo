@@ -4,6 +4,10 @@ server:
 zuul:
   ignoredServices: "*" 
   routes:
+    ms-got:  
+      sensitiveHeaders:
+      path: /**
+      serviceId: ms-got   
     test:
       sensitiveHeaders: 
       path: /test/**
