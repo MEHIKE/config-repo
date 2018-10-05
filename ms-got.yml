@@ -1,8 +1,12 @@
 server:
-  port: 8085
-  use-forward-headers: false
+  port: 8081
+  #use-forward-headers: false
   servlet:
-    context-path: /uaa
+    context-path: /ms-got
+  compression: false
+
+auth-server:
+  url: http://zuul:8060
 
 eureka:
   client:
@@ -13,9 +17,15 @@ eureka:
   server: 
     wait-time-in-ms-when-sync-empty: 3000
 
-spring:      
+management:
+  security:
+    enabled: false
+    
+spring:
+  application:
+    name: ms-got
   datasource:
-    url: jdbc:postgresql://postgres:${POSTGRES_PORT}/${POSTGRES_DB}?currentSchema=public
+    url: jdbc:postgresql://postgres:${POSTGRES_PORT}/${OAUTH_DB}?currentSchema=public
     username: ${POSTGRES_USER}
     password: ${POSTGRES_PASSWORD}
     driver-class-name: org.postgresql.Driver
@@ -23,7 +33,7 @@ spring:
       test-while-idle: true
       validation-query: SELECT 1
     initialization-mode: never
-    #platform: mysql
+    platform: postgres
   jpa:
     properties:
       hibernate:
@@ -31,9 +41,11 @@ spring:
     hibernate:
       naming:
         physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
-      ddl-auto: validate
-      
-check-user-scopes: true      
+      ddl-auto: create
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+    serialization:
+      indent-output: true
 
 logging:
   level:
@@ -41,6 +53,7 @@ logging:
     eu.babywatcher: DEBUG
     org.springframework.web: DEBUG
     org.springframework.security: DEBUG 
+  file: /tmp/logs/ms-got.log
   pattern: 
     #console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
     console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} - %msg%n"
