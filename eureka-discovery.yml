@@ -18,7 +18,7 @@ eureka:
     enable-self-preservation: false
     waitTimeInMsWhenSyncEmpty: 0
     
- logging:
+logging:
   level:
     org.springframework.security: DEBUG 
   pattern: 
