@@ -9,6 +9,11 @@ server:
 auth-server:
   url: http://auth:8085
   #url: http://zuul:8060/uaa
+  
+#security:
+#  oauth2:
+#    resource:
+#      userInfoUri: 
 
 eureka:
   client:
