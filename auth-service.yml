@@ -13,6 +13,16 @@ eureka:
   server: 
     wait-time-in-ms-when-sync-empty: 3000
 
+security:
+  oauth2:
+    client:
+      client-id: acme
+      client-secret: acmesecret
+      access-token-uri: http://auth:8085/oauth/token
+      user-authorization-uri: http://auth:8085/oauth/authorize
+    resource:
+      user-info-uri: http://auth:8085/me 
+      
 spring:      
   datasource:
     url: jdbc:postgresql://postgres:${POSTGRES_PORT}/${POSTGRES_DB}?currentSchema=public
