@@ -49,6 +49,18 @@ spring:
     serialization:
       indent-output: true
 
+oauth:
+  datasource:
+    url: jdbc:postgresql://postgres:${POSTGRES_PORT}/oauth2?currentSchema=public
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+    tomcat:
+      test-while-idle: true
+      validation-query: SELECT 1
+    initialization-mode: never
+    platform: postgres
+
 logging:
   level:
     ROOT: DEBUG
