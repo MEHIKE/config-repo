@@ -60,6 +60,18 @@ oauth:
       validation-query: SELECT 1
     initialization-mode: never
     platform: postgres
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+    hibernate:
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+      ddl-auto: create
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+    serialization:
+      indent-output: true
 
 logging:
   level:
