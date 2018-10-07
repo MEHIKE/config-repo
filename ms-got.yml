@@ -27,7 +27,8 @@ spring:
   application:
     name: ms-got
   datasource:
-    url: jdbc:postgresql://postgres:${POSTGRES_PORT}/${MSGOT_DB}?currentSchema=public
+    url: jdbc:postgresql://postgres:${POSTGRES_PORT}/oauth2?currentSchema=public
+#${MSGOT_DB}?currentSchema=public
     username: ${POSTGRES_USER}
     password: ${POSTGRES_PASSWORD}
     driver-class-name: org.postgresql.Driver
@@ -49,29 +50,29 @@ spring:
     serialization:
       indent-output: true
 
-oauth:
-  datasource:
-    url: jdbc:postgresql://postgres:${POSTGRES_PORT}/oauth2?currentSchema=public
-    username: ${POSTGRES_USER}
-    password: ${POSTGRES_PASSWORD}
-    driver-class-name: org.postgresql.Driver
-    tomcat:
-      test-while-idle: true
-      validation-query: SELECT 1
-    initialization-mode: never
-    platform: postgres
-  jpa:
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQL95Dialect
-    hibernate:
-      naming:
-        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
-      ddl-auto: create
-  jackson:
-    property-naming-strategy: SNAKE_CASE
-    serialization:
-      indent-output: true
+#oauth:
+#  datasource:
+#    url: jdbc:postgresql://postgres:${POSTGRES_PORT}/oauth2?currentSchema=public
+#    username: ${POSTGRES_USER}
+#    password: ${POSTGRES_PASSWORD}
+#    driver-class-name: org.postgresql.Driver
+#    tomcat:
+#      test-while-idle: true
+#      validation-query: SELECT 1
+#    initialization-mode: never
+#    platform: postgres
+#  jpa:
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+#    hibernate:
+#      naming:
+#        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+#      ddl-auto: create
+#  jackson:
+#    property-naming-strategy: SNAKE_CASE
+#    serialization:
+#      indent-output: true
 
 logging:
   level:
