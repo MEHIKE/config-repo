@@ -1,0 +1,57 @@
+server:
+  port: 8085
+  use-forward-headers: false
+  servlet:
+    context-path: /uaa
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: ${EUREKA_URI}
+  server: 
+    wait-time-in-ms-when-sync-empty: 3000
+
+security:
+  oauth2:
+    client:
+      client-id: acme
+      client-secret: acmesecret
+      access-token-uri: http://auth:8085/oauth/token
+      user-authorization-uri: http://auth:8085/oauth/authorize
+    resource:
+      user-info-uri: http://auth:8085/me 
+      
+spring:      
+  datasource:
+    url: jdbc:postgresql://postgres:${POSTGRES_PORT}/${POSTGRES_DB}?currentSchema=public
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+    tomcat:
+      test-while-idle: true
+      validation-query: SELECT 1
+    initialization-mode: never
+    #platform: mysql
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+    hibernate:
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+      ddl-auto: validate
+      
+check-user-scopes: true      
+
+logging:
+  level:
+    ROOT: DEBUG
+    eu.babywatcher: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG 
+  pattern: 
+    #console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"    
