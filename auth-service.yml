@@ -13,37 +13,40 @@ eureka:
   server: 
     wait-time-in-ms-when-sync-empty: 3000
 
-security:
-  oauth2:
-    client:
-      client-id: acme
-      client-secret: acmesecret
-      access-token-uri: http://auth:8085/oauth/token
-      user-authorization-uri: http://auth:8085/oauth/authorize
-    resource:
-      user-info-uri: http://auth:8085/me 
+#security:
+#  oauth2:
+#    client:
+#      client-id: acme
+#      client-secret: acmesecret
+#      access-token-uri: http://auth:8085/oauth/token
+#      user-authorization-uri: http://auth:8085/oauth/authorize
+#    resource:
+#      user-info-uri: http://auth:8085/me 
       
 spring:      
   datasource:
-    url: jdbc:postgresql://postgres:${POSTGRES_PORT}/${POSTGRES_DB}?currentSchema=public
+    url: jdbc:postgresql://${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}?currentSchema=public
     username: ${POSTGRES_USER}
     password: ${POSTGRES_PASSWORD}
     driver-class-name: org.postgresql.Driver
     tomcat:
       test-while-idle: true
       validation-query: SELECT 1
-    initialization-mode: never
-    #platform: mysql
+    #initialization-mode: never
+    #platform: postgres
   jpa:
+    show-sql: true
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        # Fix Postgres JPA Error:
+        # Method org.postgresql.jdbc.PgConnection.createClob() is not yet implemented.
+        temp.use_jdbc_metadata_defaults: false
     hibernate:
-      naming:
-        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
-      ddl-auto: validate
+      #naming:
+      #  physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+      ddl-auto: update
       
-check-user-scopes: true      
 
 logging:
   level:
