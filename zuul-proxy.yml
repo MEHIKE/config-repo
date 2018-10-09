@@ -1,5 +1,6 @@
 server:
   port: 8060
+  context-path: /client
 
 zuul:
   ignoredServices: "*" 
@@ -18,6 +19,18 @@ zuul:
       stripPrefix: false
       serviceId: auth-service 
       
+security:
+  oauth2:
+    client:
+      client-id: acme
+      client-secret: acmesecret
+      access-token-uri: http://auth:8085/uaa/oauth/token
+      user-authorization-uri: http://auth:8085/uaa/oauth/authorize
+      scope: read,write
+      auto-approve-scopes: '.*'
+    resource:
+      user-info-uri: http://auth:8085/me
+            
 eureka:
   client:
     registerWithEureka: true
