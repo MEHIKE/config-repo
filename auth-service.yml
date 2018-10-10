@@ -114,8 +114,8 @@ twitter:
   consumer:
     key:
     secret:
-  scope:       
- 
+  scope:
+
 # Linkedin
 # http://localhost:8080/auth/linkedin
 linkedin:
