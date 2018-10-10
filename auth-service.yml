@@ -52,11 +52,15 @@ social.auto-signup: false
 
 # Google
 # http://localhost:8080/auth/google
-google.client.id=${GOOGLE_APPID}
+google:
+  client:
+    id: ${GOOGLE_APPID}
+    secret: ${GOOGLE_SECRET}
+  scope: "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"
 #160790488111-he5fn6rq0foqg05te70dk25gifeoum9s.apps.googleusercontent.com
-google.client.secret=${GOOGLE_SECRET}
+#google.client.secret=${GOOGLE_SECRET}
 #VILTmX1UjOnyw2_meYvDQEdl
-google.scope=https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile
+#google.scope=https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile
  
 # Facebook
 # http://localhost:8080/auth/facebook
@@ -124,7 +128,7 @@ logging:
     eu.babywatcher: DEBUG
     org.springframework.web: DEBUG
     org.springframework.security: DEBUG
-    #file: /tmp/logs/ms-got.log 
+    #file: /tmp/logs/auth.log 
   pattern: 
     #console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
     console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} - %msg%n"
