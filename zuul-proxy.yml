@@ -30,6 +30,7 @@ security:
       user-authorization-uri: http://auth:8085/uaa/oauth/authorize
       scope: read,write
       auto-approve-scopes: '.*'
+      grant-type: client_credentials
     resource:
       user-info-uri: http://auth:8085/me
             
