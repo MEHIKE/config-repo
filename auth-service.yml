@@ -22,7 +22,8 @@ eureka:
 #      user-authorization-uri: http://auth:8085/oauth/authorize
 #    resource:
 #      user-info-uri: http://auth:8085/me 
-      
+
+
 spring:      
   datasource:
     url: jdbc:postgresql://${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}?currentSchema=public
