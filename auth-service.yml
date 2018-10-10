@@ -74,6 +74,7 @@ security:
       user-authorization-uri: http://auth:8085/uaa/oauth/authorize
       scope: read,write
       auto-approve-scopes: '.*'
+      grant-type: client_credentials
       #clientId: ${FB_APPID}
       #clientSecret: ${FB_SECRET}
       #accessTokenUri: https://graph.facebook.com/oauth/access_token
