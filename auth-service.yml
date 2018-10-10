@@ -61,7 +61,7 @@ google:
 #google.client.secret=${GOOGLE_SECRET}
 #VILTmX1UjOnyw2_meYvDQEdl
 #google.scope=https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile
- 
+
 # Facebook
 # http://localhost:8080/auth/facebook
 #facebook.scope=public_profile,email
