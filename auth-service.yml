@@ -71,8 +71,8 @@ security:
     client:
       client-id: acme
       client-secret: acmesecret
-      access-token-uri: http://auth:8085/uaa/oauth/token
-      user-authorization-uri: http://auth:8085/uaa/oauth/authorize
+      #access-token-uri: http://auth:8085/uaa/oauth/token
+      #user-authorization-uri: http://auth:8085/uaa/oauth/authorize
       scope: read,write
       auto-approve-scopes: '.*'
       #grant-type: client_credentials
@@ -101,8 +101,8 @@ facebook:
 #github
 github:
   client:
-    clientId: bd1c0a783ccdd1c9b9e4
-    clientSecret: 1a9030fbca47a5b2c28e92f19050bb77824b5ad1
+    clientId: ${GITHUB_APPID}
+    clientSecret: ${GITHUB_SECRET}
     accessTokenUri: https://github.com/login/oauth/access_token
     userAuthorizationUri: https://github.com/login/oauth/authorize
     clientAuthenticationScheme: form
