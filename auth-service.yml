@@ -61,6 +61,8 @@ google:
     accessTokenUri: https://google.com/login/oauth/access_token
     userAuthorizationUri: https://google.com/login/oauth/authorize
     clientAuthenticationScheme: form
+  resource:
+    userInfoUri: https://api.google.com/user 
     
 #160790488111-he5fn6rq0foqg05te70dk25gifeoum9s.apps.googleusercontent.com
 #google.client.secret=${GOOGLE_SECRET}
