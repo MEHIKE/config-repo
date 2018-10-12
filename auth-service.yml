@@ -118,18 +118,25 @@ github:
 # Twitter
 # http://localhost:8080/auth/twitter
 twitter:
-  consumer:
-    key:
-    secret:
-  scope:
+  client:
+    clientId: oXJIDGVdB0PDnMICDwKckyzKm
+    clientSecret: Z4BpN51kNsb2wbEfzDXm40v38W3I2P1u4H6fvfM6HQraVfry5j
+    accessTokenUri: https://api.twitter.com/oauth/access_token
+    userAuthorizationUri: https://api.twitter.com/oauth/authorize
+    clientAuthenticationScheme: form
+  resource:
+    userInfoUri:  https://api.twitter.com/1.1/users/show.json
 
 # Linkedin
 # http://localhost:8080/auth/linkedin
-linkedin:
-  consumer:
-    key:
-    secret:
-  scope:
+linkedIn:
+  client:
+    clientId: ${LINKEDIN_APPID}
+    clientSecret: ${LINKEDIN_SECRET}
+    accessTokenUri: https://www.linkedin.com/oauth/v2/accessToken
+    userAuthorizationUri: https://www.linkedin.com/oauth/v2/authorization
+  resource:
+    userInfoUri: https://api.linkedin.com/v1/people/~?format=json
 
 logging:
   level:
