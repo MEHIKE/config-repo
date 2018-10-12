@@ -107,8 +107,8 @@ facebook:
 #github
 github:
   client:
-    clientId: ${GITHUB_APPID}
-    clientSecret: ${GITHUB_SECRET}
+    clientId: ${GITHUB_CLIENTID}
+    clientSecret: ${GITHUB_CLIENTSECRET}
     accessTokenUri: https://github.com/login/oauth/access_token
     userAuthorizationUri: https://github.com/login/oauth/authorize
     clientAuthenticationScheme: form
@@ -131,7 +131,7 @@ twitter:
 # http://localhost:8080/auth/linkedin
 linkedIn:
   client:
-    clientId: ${LINKEDIN_APPID}
+    clientId: ${LINKEDIN_CLIENTID}
     clientSecret: ${LINKEDIN_SECRET}
     accessTokenUri: https://www.linkedin.com/oauth/v2/accessToken
     userAuthorizationUri: https://www.linkedin.com/oauth/v2/authorization
