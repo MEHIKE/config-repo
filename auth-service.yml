@@ -140,11 +140,11 @@ linkedIn:
 
 logging:
   level:
-    ROOT: DEBUG
+    ROOT: ERROR
     eu.babywatcher: DEBUG
     org.springframework.web: DEBUG
     org.springframework.security: DEBUG
-    #file: /tmp/logs/auth.log 
+    file: /tmp/logs/auth.log 
   pattern: 
     #console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
     console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} - %msg%n"
