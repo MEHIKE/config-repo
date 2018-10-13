@@ -94,8 +94,8 @@ security:
 
 facebook:
   client:
-    clientId: ${FB_APPID}
-    clientSecret: ${FB_SECRET}
+    clientId: ${FB_CLIENTID}
+    clientSecret: ${FB_CLIENTSECRET}
     accessTokenUri: https://graph.facebook.com/oauth/access_token
     userAuthorizationUri: https://www.facebook.com/dialog/oauth
     tokenName: oauth_token
