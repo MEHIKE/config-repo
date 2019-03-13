@@ -1,0 +1,159 @@
+server:
+  port: 8086
+  use-forward-headers: false
+  servlet:
+    context-path: /uaa
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: ${EUREKA_URI}
+  server: 
+    wait-time-in-ms-when-sync-empty: 3000
+
+#security:
+#  oauth2:
+#    client:
+#      client-id: acme
+#      client-secret: acmesecret
+#      access-token-uri: http://auth:8085/oauth/token
+#      user-authorization-uri: http://auth:8085/oauth/authorize
+#    resource:
+#      user-info-uri: http://auth:8085/me 
+
+
+spring:
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}?currentSchema=public
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+    tomcat:
+      test-while-idle: true
+      validation-query: SELECT 1
+    #initialization-mode: never
+    #platform: postgres
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        # Fix Postgres JPA Error:
+        # Method org.postgresql.jdbc.PgConnection.createClob() is not yet implemented.
+        temp.use_jdbc_metadata_defaults: false
+    hibernate:
+      #naming:
+      #  physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+      ddl-auto: create 
+      #update
+      
+social.auto-signup: false
+
+# Google
+# http://localhost:8080/auth/google
+google:
+  client:
+    clientId: ${GOOGLE_CLIENTID}
+    clientSecret: ${GOOGLE_CLIENTSECRET}
+    scope: "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"
+    accessTokenUri: https://google.com/login/oauth/access_token
+    userAuthorizationUri: https://google.com/login/oauth/authorize
+    clientAuthenticationScheme: form
+  resource:
+    userInfoUri: https://api.google.com/user
+    
+#160790488111-he5fn6rq0foqg05te70dk25gifeoum9s.apps.googleusercontent.com
+#google.client.secret=${GOOGLE_SECRET}
+#VILTmX1UjOnyw2_meYvDQEdl
+#google.scope=https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile
+
+# Facebook
+# http://localhost:8080/auth/facebook
+#facebook.scope=public_profile,email
+security:
+  jwt:
+    key-store: classpath:keystore.jks
+    key-store-password: mehike
+    key-pair-alias: servercert
+    key-pair-password: mehike
+  oauth2:
+    client:
+      client-id: acme
+      client-secret: acmesecret
+      #access-token-uri: http://auth:8085/uaa/oauth/token
+      #user-authorization-uri: http://auth:8085/uaa/oauth/authorize
+      scope: read,write
+      auto-approve-scopes: '.*'
+      #grant-type: client_credentials
+      #clientId: ${FB_APPID}
+      #clientSecret: ${FB_SECRET}
+      #accessTokenUri: https://graph.facebook.com/oauth/access_token
+      #userAuthorizationUri: https://www.facebook.com/dialog/oauth
+      #tokenName: oauth_token
+      #authenticationScheme: query
+      #clientAuthenticationScheme: form
+    #resource:
+      #userInfoUri: https://graph.facebook.com/me
+
+facebook:
+  client:
+    clientId: ${FB_CLIENTID}
+    clientSecret: ${FB_CLIENTSECRET}
+    accessTokenUri: https://graph.facebook.com/oauth/access_token
+    userAuthorizationUri: https://www.facebook.com/dialog/oauth
+    tokenName: oauth_token
+    authenticationScheme: query
+    clientAuthenticationScheme: form
+  resource:
+    userInfoUri: https://graph.facebook.com/me
+
+#github
+github:
+  client:
+    clientId: ${GITHUB_CLIENTID}
+    clientSecret: ${GITHUB_CLIENTSECRET}
+    accessTokenUri: https://github.com/login/oauth/access_token
+    userAuthorizationUri: https://github.com/login/oauth/authorize
+    clientAuthenticationScheme: form
+  resource:
+    userInfoUri: https://api.github.com/user
+
+# Twitter
+# http://localhost:8080/auth/twitter
+twitter:
+  client:
+    clientId: oXJIDGVdB0PDnMICDwKckyzKm
+    clientSecret: Z4BpN51kNsb2wbEfzDXm40v38W3I2P1u4H6fvfM6HQraVfry5j
+    accessTokenUri: https://api.twitter.com/oauth/access_token
+    userAuthorizationUri: https://api.twitter.com/oauth/authorize
+    clientAuthenticationScheme: form
+  resource:
+    userInfoUri:  https://api.twitter.com/1.1/users/show.json
+
+# Linkedin
+# http://localhost:8080/auth/linkedin
+linkedIn:
+  client:
+    clientId: ${LINKEDIN_CLIENTID}
+    clientSecret: ${LINKEDIN_SECRET}
+    accessTokenUri: https://www.linkedin.com/oauth/v2/accessToken
+    userAuthorizationUri: https://www.linkedin.com/oauth/v2/authorization
+  resource:
+    userInfoUri: https://api.linkedin.com/v1/people/~?format=json
+
+logging:
+  level:
+    ROOT: ERROR
+    eu.babywatcher: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG
+    file: /tmp/logs/auth.log 
+  pattern: 
+    #console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"

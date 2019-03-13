@@ -3,21 +3,22 @@ server:
   context-path: /client
 
 zuul:
-  ignoredServices: "*" 
+  ignoredServices: "*"
+  sensitiveHeaders: Cookie,Set-Cookie
   routes:
     ms-got:  
-      sensitiveHeaders:
+      #sensitiveHeaders:
       path: /**
       serviceId: ms-got   
     test:
-      sensitiveHeaders: 
+      #sensitiveHeaders:
       path: /test/**
-      serviceId: test
+      serviceId: test-service
     auth-service:  
-      sensitiveHeaders:
+      #sensitiveHeaders:
       path: /uaa/**
       stripPrefix: false
-      serviceId: auth-service 
+      serviceId: auth-service-simple
       
 security:
   basic:
