@@ -2,8 +2,9 @@ server:
   port: 8086
   use-forward-headers: false
   servlet:
-    context-path=/spring-security-oauth-server
+    #context-path=/spring-security-oauth-server
     #context-path: /uaa
+    context-path: /oauth
 
 eureka:
   client:
