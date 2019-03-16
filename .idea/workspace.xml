@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="016751e3-272c-4a82-ae66-92a2b1e1a378" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service-simple.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service-simple.yml" afterDir="false" />
-    </list>
+    <list default="true" id="016751e3-272c-4a82-ae66-92a2b1e1a378" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,12 +140,12 @@
       <updated>1552390377169</updated>
       <workItem from="1552390378553" duration="9239000" />
       <workItem from="1552544690291" duration="3610000" />
-      <workItem from="1552634537646" duration="1859000" />
+      <workItem from="1552634537646" duration="2459000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14708000" />
+    <option name="totallyTimeSpent" value="15308000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="585" extended-state="2" />
